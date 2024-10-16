@@ -27,7 +27,7 @@ export const EXPERIENCES = [
                   in collaboration with Amazon Web Services and Mission Cloud, fostering innovation and problem-solving. 
                   I also managed financial operations to optimize resource allocation, ensuring impactful and cost-effective outcomes.`,
     technologies: ["Amazon Web Services (AWS)", "Machine Learning (M.L.)", "Artificial Intelligence (A.I.)", "C", "Linux", "Ubuntu", "Excel", "Powerpoint", "Leadership", "Cross-Functional Teams"],
-  }
+  },
 ];
 
 export const PROJECTS = [
