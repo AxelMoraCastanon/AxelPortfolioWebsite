@@ -1,6 +1,7 @@
 import FarmersWalkImage from "../assets/AxelMoraFarmersWalk.png";
 import CapstoneImage from "../assets/AxelMoraCapstone.png";
 import { ABOUT_TEXT } from "../constants";
+import {motion} from "framer-motion";
 
 const About = () => {
   return (
@@ -10,31 +11,43 @@ const About = () => {
       </h1>
 
       {/* Text Section at the Top */}
-      <div className="flex justify-center mb-8 px-4">
+      <motion.div 
+      whileInView={{opacity:1, x: 0}}
+      initial={{opacity: 0, x: 100}}
+      transition={{duration: 0.5}}
+      className="flex justify-center mb-8 px-4">
         <p className="max-w-2xl text-center text-lg">
           {ABOUT_TEXT}
         </p>
-      </div>
+      </motion.div>
 
       {/* Grid Layout for Side-by-Side Images */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 px-4 lg:px-32">
         {/* Left Image: Farmers Walk */}
-        <div className="flex justify-center">
+        <motion.div 
+        whileInView={{opacity: 1, x: 0}}
+        initial={{opacity:0 , x: -100}}
+        transition={{duration: 0.5}}
+        className="flex justify-center">
           <img
             className="rounded-2xl object-cover w-full max-w-sm"
             src={FarmersWalkImage}
             alt="Farmers Walk"
           />
-        </div>
+        </motion.div>
 
         {/* Right Image: Capstone Project */}
-        <div className="flex justify-center">
+        <motion.div 
+        whileInView={{opacity: 1, x: 0}}
+        initial={{opacity:0 , x: +100}}
+        transition={{duration: 0.5}}        
+        className="flex justify-center">
           <img
             className="rounded-2xl object-cover w-full max-w-sm"
             src={CapstoneImage}
             alt="Capstone Project"
           />
-        </div>
+        </motion.div>
       </div>
     </div>
   );
