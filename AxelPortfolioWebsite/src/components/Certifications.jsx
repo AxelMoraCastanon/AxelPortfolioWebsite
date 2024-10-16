@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 // Import institution logos
 import csuciLogo from '../assets/certifications/csuci_logo.jpeg';
@@ -75,41 +76,69 @@ const certifications = [
   },
 ];
 
+// Animation Variants
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, x: -50 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
+};
+
 const Certifications = () => {
   return (
-    <div className="border-b border-neutral-900 text-white py-12 px-8">
+    <motion.div
+      className="border-b border-neutral-900 text-white py-12 px-8"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+    >
       <h2 className="my-10 text-center text-4xl">Certifications</h2>
-      <ul className="space-y-6">
+      <motion.ul className="space-y-6">
         {certifications.map((cert, index) => (
-          <li key={index} className="flex items-center gap-4">
-            {/* Display Logo if Available */}
+          <motion.li
+            key={index}
+            className="flex items-center gap-4"
+            variants={itemVariants}
+          >
+            {/* Display Logo with Hover Animation */}
             {cert.logo && (
-              <img
+              <motion.img
                 src={cert.logo}
                 alt={`${cert.institution} logo`}
-                className="w-16 h-16 object-cover rounded"
+                className="w-20 h-20 object-cover rounded"
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: 'spring', stiffness: 300 }}
               />
             )}
 
             {/* Certification Details */}
             <div className="flex flex-col">
-              <a
+              <motion.a
                 href={cert.url || '#'}
                 target={cert.url ? '_blank' : '_self'}
                 rel={cert.url ? 'noopener noreferrer' : ''}
                 className={`text-blue-300 underline hover:text-blue-500 ${
                   !cert.url && 'cursor-default'
                 }`}
+                whileHover={{ scale: 1.05 }}
               >
                 <h3 className="text-xl font-semibold">{cert.title}</h3>
-              </a>
+              </motion.a>
               <p className="text-sm text-neutral-400">{cert.institution}</p>
               <p className="text-sm text-neutral-500">{cert.date}</p>
             </div>
-          </li>
+          </motion.li>
         ))}
-      </ul>
-    </div>
+      </motion.ul>
+    </motion.div>
   );
 };
 
