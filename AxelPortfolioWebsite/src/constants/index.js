@@ -3,6 +3,7 @@ import Bidme2 from "../assets/projects/Bidme2.jpg";
 import BondPortfolio from "../assets/projects/BondPortfolio.jpg";
 import GymPulse from "../assets/projects/GymPulse.jpg";
 import AIClubImage from "../assets/CSUCIArtificialIntelligenceClub.jpg";
+import AxelMoraResume from "../../public/AxelMoraResume.pdf";
 
 export const HERO_CONTENT = `I’m an AWS-certified Software Engineer with a B.S. in Computer Science from CSU Channel Islands.
  I specialize in integrating cloud services to build secure, scalable, and reliable solutions.

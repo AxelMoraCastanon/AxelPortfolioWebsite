@@ -1,4 +1,5 @@
 import { CONTACT } from "../constants";
+import AxelMoraResume from "../../public/AxelMoraResume.pdf"; // Import PDF
 
 const Contact = () => {
   return (
@@ -8,7 +9,7 @@ const Contact = () => {
         {/* Email Section */}
         {CONTACT.email && (
           <div>
-            <span className="font-semibold text-blue-300" >Email: </span>
+            <span className="font-semibold text-blue-300">Email: </span>
             <a href={`mailto:${CONTACT.email}`} className="border-b">
               {CONTACT.email}
             </a>
@@ -44,6 +45,18 @@ const Contact = () => {
             </a>
           </div>
         )}
+
+        {/* Resume Download Section */}
+        <div>
+          <span className="font-semibold text-blue-300">Axel Mora's Resume: </span>
+          <a
+            href={AxelMoraResume}
+            download="Axel_Mora_Resume.pdf"
+            className="border-b"
+          >
+            Download
+          </a>
+        </div>
       </div>
     </div>
   );
