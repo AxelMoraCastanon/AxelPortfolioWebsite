@@ -4,61 +4,98 @@ import { FaLinkedin, FaGithub, FaInstagram } from 'react-icons/fa';
 import { MdEmail, MdQrCode } from 'react-icons/md'; // Import Icons
 import { CONTACT } from '../constants'; // Import CONTACT
 import { QRCodeCanvas } from 'qrcode.react'; // Import QR Code Library
+import {motion} from "framer-motion";
 
 const Navbar = () => {
   const [showQR, setShowQR] = useState(false); // Manage QR modal visibility
 
   const toggleQRModal = () => setShowQR(!showQR);
 
+  // Navbar animation variants
+  const navbarVariants = {
+    hidden: { y: -100, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 1, ease: 'easeOut' },
+    },
+  };
+
+  // Icon hover animation
+  const iconHover = {
+    scale: 1.2,
+    transition: { type: 'spring', stiffness: 300 },
+  };
+
   return (
     <>
-      <nav className="mb-20 flex items-center justify-between py-6">
+      <motion.nav
+        variants={navbarVariants}
+        initial="hidden"
+        animate="visible"
+        className="mb-20 flex items-center justify-between py-6 px-6 lg:px-10 border-neutral-900 text-white shadow-md"
+      >
+        {/* Logo Section */}
+        {/*
         <div className="flex flex-shrink-0 items-center">
-          <img className="mx-2 w-30" src={logo} alt="logo" />
+          <img className="mx-2 w-28 h-auto" src={logo} alt="logo" />
         </div>
+        */}
 
-        <div className="m-8 flex items-center justify-center gap-4 text-2xl">
+        {/* Icons Section */}
+        <div className="flex items-center gap-6 text-2xl ml-auto">
           {/* Email Icon */}
-          <a href={`mailto:${CONTACT.email}`} className="hover:text-red-500">
+          <motion.a
+            href={`mailto:${CONTACT.email}`}
+            className="hover:text-red-500"
+            whileHover={iconHover}
+          >
             <MdEmail />
-          </a>
+          </motion.a>
 
           {/* LinkedIn Icon */}
-          <a
+          <motion.a
             href={CONTACT.linkedin}
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-blue-500"
+            whileHover={iconHover}
           >
             <FaLinkedin />
-          </a>
+          </motion.a>
 
           {/* GitHub Icon */}
-          <a
+          <motion.a
             href={CONTACT.github}
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-gray-500"
+            whileHover={iconHover}
           >
             <FaGithub />
-          </a>
+          </motion.a>
 
           {/* Instagram Icon */}
-          <a
+          <motion.a
             href="https://www.instagram.com/axelsmora16/profilecard/?igsh=MzRlODBiNWFlZA%3D%3D"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-pink-500"
+            whileHover={iconHover}
           >
             <FaInstagram />
-          </a>
+          </motion.a>
 
           {/* Share Button */}
-          <button onClick={toggleQRModal} className="hover:text-green-500">
+          <motion.button
+            onClick={toggleQRModal}
+            className="hover:text-green-500"
+            whileHover={iconHover}
+          >
             <MdQrCode />
-          </button>
+          </motion.button>
         </div>
-      </nav>
+      </motion.nav>
 
       {/* QR Code Modal */}
       {showQR && (
