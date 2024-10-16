@@ -1,9 +1,14 @@
 import { PROJECTS } from '../constants';
+import {motion} from "framer-motion";
 
 const Projects = () => {
   return (
     <div className="border-b border-neutral-900 pb-4">
-      <h1 className="my-20 text-center text-4xl">Projects</h1>
+      <motion.h1 
+      whileInView={{opacity: 1, y: 0}}
+      initial={{opacity: 0, y: -100}}
+      transition={{duration: 0.5}}
+      className="my-20 text-center text-4xl">Projects</motion.h1>
       <div>
         {PROJECTS.map((project, index) => (
           <div
@@ -11,7 +16,11 @@ const Projects = () => {
             className="mb-8 grid grid-cols-1 lg:grid-cols-4 gap-6 lg:items-start"
           >
             {/* Image Column */}
-            <div className="lg:col-span-1 flex items-center justify-center">
+            <motion.div 
+            whileInView={{opacity: 1, x: 0}}
+            initial={{opacity: 0, x: -100}}
+            transition={{duration: 1}}
+            className="lg:col-span-1 flex items-center justify-center">
               {project.image && (
                 <img
                   src={project.image}
@@ -21,10 +30,14 @@ const Projects = () => {
                   className="rounded"
                 />
               )}
-            </div>
+            </motion.div>
 
             {/* Content Column */}
-            <div className="lg:col-span-3">
+            <motion.div 
+            whileInView={{opacity: 1, x: 0}}
+            initial={{opacity: 0, x: 100}}
+            transition={{duration: 1}}
+            className="lg:col-span-3">
               <h6>{project.date}</h6>
               <h6>{project.position}</h6>
               <h6 className="mb-2 font-semibold text-blue-300">{project.title}</h6>
@@ -39,7 +52,7 @@ const Projects = () => {
                   </span>
                 ))}
               </div>
-            </div>
+            </motion.div>
           </div>
         ))}
       </div>
