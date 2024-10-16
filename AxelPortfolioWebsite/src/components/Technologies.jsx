@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 // Import Icons
 import { BsFiletypeSql, BsFiletypeHtml } from "react-icons/bs";
 import { PiFileCppBold, PiFileCBold } from "react-icons/pi";
-import { SiPhp, SiMysql, SiPostman, SiIntellijidea, SiXcode } from "react-icons/si";  // Added IntelliJ and Xcode
+import { SiPhp, SiMysql, SiPostman, SiIntellijidea, SiXcode, SiVim } from "react-icons/si";  // Added IntelliJ, Xcode, and Vim
 import { RiJavaLine, RiJavascriptFill, RiReactjsLine } from "react-icons/ri";
 import { TbBrandKotlin, TbFileTypeXml } from "react-icons/tb";
 import { VscVscodeInsiders } from "react-icons/vsc";
@@ -53,8 +53,9 @@ const Technologies = () => {
     { Icon: SiPostman, color: "#FF6C37", duration: 2.8 },
     { Icon: FaGitSquare, color: "#F05032", duration: 3.0 },
     { Icon: FaGithub, color: "#A8B9CC", duration: 3.2 },
-    { Icon: SiIntellijidea, color: "7F52FF", duration: 3.4 },  // IntelliJ IDEA Icon
+    { Icon: SiIntellijidea, color: "#000000", duration: 3.4 },  // IntelliJ IDEA Icon
     { Icon: SiXcode, color: "#1575F9", duration: 3.6 },  // Xcode Icon
+    { Icon: SiVim, color: "#B0B0B0", duration: 3.8 },  // Vim Icon (light grey color)
   ];
 
   const operatingSystems = [
