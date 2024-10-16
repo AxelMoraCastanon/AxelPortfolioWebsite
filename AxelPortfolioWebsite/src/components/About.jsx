@@ -1,4 +1,5 @@
-import aboutImage from "../assets/AxelMoraFarmersWalk.png";
+import FarmersWalkImage from "../assets/AxelMoraFarmersWalk.png";
+import CapstoneImage from "../assets/AxelMoraCapstone.png";
 import { ABOUT_TEXT } from "../constants";
 
 const About = () => {
@@ -8,21 +9,35 @@ const About = () => {
         About
         <span className="text-blue-300"> Axel</span>
       </h1>
+
       <div className="flex flex-wrap">
+        {/* Left Section: Farmers Walk Image */}
         <div className="w-full lg:w-1/2 lg:p-8">
           <div className="flex items-center justify-center">
-            {/* Image resized to 25% of its original size */}
             <img
               className="rounded-2xl"
-              src={aboutImage}
-              alt="about"
-              style={{ width: "70%" }}
+              src={FarmersWalkImage}
+              alt="Farmers Walk"
+              style={{ width: "100%" }}
             />
           </div>
         </div>
+
+        {/* Right Section: About Text and Capstone Image */}
         <div className="w-full lg:w-1/2">
-          <div className="flex justify-center lg:justify-start">
+          <div className="flex flex-col items-center lg:items-start">
+            {/* About Text */}
             <p className="my-2 max-w-xl py-6">{ABOUT_TEXT}</p>
+
+            {/* Capstone Image */}
+            <div className="mt-8">
+              <img
+                className="rounded-2xl"
+                src={CapstoneImage}
+                alt="Capstone Project"
+                style={{ width: "100%", maxWidth: "400px" }}
+              />
+            </div>
           </div>
         </div>
       </div>
