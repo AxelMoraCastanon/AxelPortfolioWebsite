@@ -38,7 +38,7 @@ const recommendations = [
 const Recommendations = () => {
   return (
     <div className="border-b border-neutral-900 text-white py-12 px-8">
-      <h2 className="text-center text-3xl font-bold mb-8">Recommendations</h2>
+      <h2 className="my-10 text-center text-4xl">Recommendations</h2>
       {recommendations.map((rec, index) => (
         <div key={index} className="mb-8 border-b border-neutral-900 pb-8">
           {/* Name as a Clickable Link */}

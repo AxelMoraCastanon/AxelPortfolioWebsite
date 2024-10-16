@@ -26,7 +26,7 @@ export const EXPERIENCES = [
     description: `Led AI and cloud computing initiatives, organizing workshops and a successful AWS Cloud-Computing Hackathon
                   in collaboration with Amazon Web Services and Mission Cloud, fostering innovation and problem-solving. 
                   I also managed financial operations to optimize resource allocation, ensuring impactful and cost-effective outcomes.`,
-    technologies: ["AWS", "C", "Linux", "Excel", "Powerpoint", "Leadership", "Cross-Functional Teams"],
+    technologies: ["Amazon Web Services (AWS)", "Machine Learning (M.L.)", "Artificial Intelligence (A.I.)", "C", "Linux", "Ubuntu", "Excel", "Powerpoint", "Leadership", "Cross-Functional Teams"],
   }
 ];
 
