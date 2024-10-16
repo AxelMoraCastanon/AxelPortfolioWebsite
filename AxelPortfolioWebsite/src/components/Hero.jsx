@@ -1,30 +1,65 @@
 import { HERO_CONTENT } from "../constants";
 import profilePicture from "../assets/AxelMoraProfilePicture.png";
 import AxelMoraResume from "../../public/AxelMoraResume.pdf"; // Import PDF
+import { motion } from "framer-motion";
+
+const container = (delay) => ({
+  hidden: { x: -100, opacity: 0 },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: { duration: 0.5, delay: delay },
+  },
+});
 
 const Hero = () => {
   return (
     <div className="border-b border-neutral-900 pb-8 lg:pb-16">
       <div className="flex flex-wrap">
-        {/* Left Section: Name, Role, Content */}
-        <div className="w-full lg:w-1/2 px-4 lg:px-8">
+        {/* Profile Picture Section - Display First on Mobile */}
+        <div className="w-full lg:w-1/2 lg:p-8 order-1 lg:order-2 mb-8 lg:mb-0">
+          <div className="flex justify-center">
+            <motion.img
+              initial={{ x: 100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 1, delay: 1.2 }}
+              src={profilePicture}
+              alt="Axel Mora"
+              className="w-32 h-32 sm:w-48 sm:h-48 lg:w-64 lg:h-64 rounded-full object-cover"
+            />
+          </div>
+        </div>
+
+        {/* Content Section - Display After Profile Picture on Mobile */}
+        <div className="w-full lg:w-1/2 px-4 lg:px-8 order-2 lg:order-1">
           <div className="flex flex-col items-center lg:items-start">
-            <h1
+            <motion.h1
+              variants={container(0)}
+              initial="hidden"
+              animate="visible"
               className="pb-8 text-5xl font-thin tracking-tight sm:text-6xl 
                          lg:mt-16 lg:text-8xl"
             >
               Axel Mora
-            </h1>
-            <span
+            </motion.h1>
+            <motion.span
+              variants={container(0.5)}
+              initial="hidden"
+              animate="visible"
               className="bg-gradient-to-r from-blue-300 via-gray-500 
-                         to-blue-700 bg-clip-text text-2xl sm:text-3xl 
+                         to-blue-700 bg-clip-text text-2xl sm:text-3xl
                          tracking-tight text-transparent"
             >
               Software & Cloud Engineer
-            </span>
-            <p className="my-4 max-w-xl py-4 font-light tracking-tighter text-center lg:text-left">
+            </motion.span>
+            <motion.p
+              variants={container(1)}
+              initial="hidden"
+              animate="visible"
+              className="my-4 max-w-xl py-4 font-light tracking-tighter text-center lg:text-left"
+            >
               {HERO_CONTENT}
-            </p>
+            </motion.p>
 
             {/* Buttons for Resume */}
             <div className="mt-8 flex flex-col space-y-4 sm:space-y-0 sm:flex-row sm:space-x-4">
@@ -51,17 +86,6 @@ const Hero = () => {
                 Download Resume
               </a>
             </div>
-          </div>
-        </div>
-
-        {/* Right Section: Profile Picture */}
-        <div className="w-full lg:w-1/2 lg:p-8 mt-8 lg:mt-0">
-          <div className="flex justify-center">
-            <img 
-              src={profilePicture} 
-              alt="Axel Mora" 
-              className="w-32 h-32 sm:w-48 sm:h-48 lg:w-64 lg:h-64 rounded-full object-cover"
-            />
           </div>
         </div>
       </div>
