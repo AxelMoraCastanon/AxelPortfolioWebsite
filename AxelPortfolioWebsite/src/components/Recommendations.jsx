@@ -1,4 +1,5 @@
 import React from 'react';
+import linkedinLogo from '../assets/certifications/linkedin.jpeg'; // Import LinkedIn logo
 
 const recommendations = [
   {
@@ -41,15 +42,23 @@ const Recommendations = () => {
       <h2 className="my-10 text-center text-4xl">Recommendations</h2>
       {recommendations.map((rec, index) => (
         <div key={index} className="mb-8 border-b border-neutral-900 pb-8">
-          {/* Name as a Clickable Link */}
-          <a
-            href={rec.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-300 underline hover:text-blue-500"
-          >
-            <h3 className="text-xl font-semibold">{rec.name}</h3>
-          </a>
+          <div className="flex items-center">
+            {/* LinkedIn Logo */}
+            <img
+              src={linkedinLogo}
+              alt="LinkedIn logo"
+              className="w-6 h-6 mr-2"
+            />
+            {/* Name as a Clickable Link */}
+            <a
+              href={rec.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-300 underline hover:text-blue-500"
+            >
+              <h3 className="text-xl font-semibold">{rec.name}</h3>
+            </a>
+          </div>
 
           <p className="text-sm">{rec.connection}</p>
           <p className="text-sm">{rec.title}</p>
