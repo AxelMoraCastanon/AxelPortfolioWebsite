@@ -4,25 +4,26 @@ import { motion } from "framer-motion";
 // Import Icons
 import { BsFiletypeSql, BsFiletypeHtml } from "react-icons/bs";
 import { PiFileCppBold, PiFileCBold } from "react-icons/pi";
-import { SiPhp, SiMysql, SiPostman } from "react-icons/si";
+import { SiPhp, SiMysql, SiPostman, SiIntellijidea, SiXcode } from "react-icons/si";  // Added IntelliJ and Xcode
 import { RiJavaLine, RiJavascriptFill, RiReactjsLine } from "react-icons/ri";
 import { TbBrandKotlin, TbFileTypeXml } from "react-icons/tb";
 import { VscVscodeInsiders } from "react-icons/vsc";
 import { FaAws, FaGitSquare, FaGithub, FaLinux, FaUbuntu, FaApple, FaWindows } from "react-icons/fa";
 import { IoLogoAndroid } from "react-icons/io5";
 
-// Technology Card Component
+// Technology Card Component with Hover Effect
 const TechnologyCardComponent = ({ Icon, color, duration }) => (
   <motion.div
     initial={{ y: -10 }}
-    animate={{ y: [10, -10] }}
+    animate={{ y: [10, -10], rotate: [0, 1, -1, 0] }}
     transition={{
       duration: duration,
       ease: "linear",
       repeat: Infinity,
       repeatType: "reverse",
     }}
-    className="rounded-2xl border-4 border-neutral-800 p-4"
+    whileHover={{ scale: 1.1, backgroundColor: "#333", boxShadow: "0px 0px 8px rgba(255, 255, 255, 0.5)" }}
+    className="rounded-2xl border-4 border-neutral-800 p-4 transition-transform duration-300"
   >
     <Icon className="text-7xl" style={{ color }} />
   </motion.div>
@@ -30,7 +31,6 @@ const TechnologyCardComponent = ({ Icon, color, duration }) => (
 
 const TechnologyCard = React.memo(TechnologyCardComponent);
 
-// Technologies Component
 const Technologies = () => {
   const languages = [
     { Icon: BsFiletypeSql, color: "#CC2927", duration: 2.1 },
@@ -46,12 +46,15 @@ const Technologies = () => {
     { Icon: RiReactjsLine, color: "#61DAFB", duration: 4.1 },
   ];
 
+  // Updated Tools & Platforms Array
   const tools = [
     { Icon: VscVscodeInsiders, color: "#007ACC", duration: 2.4 },
     { Icon: FaAws, color: "#FF9900", duration: 2.6 },
     { Icon: SiPostman, color: "#FF6C37", duration: 2.8 },
     { Icon: FaGitSquare, color: "#F05032", duration: 3.0 },
     { Icon: FaGithub, color: "#A8B9CC", duration: 3.2 },
+    { Icon: SiIntellijidea, color: "7F52FF", duration: 3.4 },  // IntelliJ IDEA Icon
+    { Icon: SiXcode, color: "#1575F9", duration: 3.6 },  // Xcode Icon
   ];
 
   const operatingSystems = [
@@ -78,8 +81,9 @@ const Technologies = () => {
         Technologies
       </motion.h1>
 
-      <div className="flex flex-wrap items-center justify-center gap-4">
-        {/* Render Languages and Databases */}
+      {/* Section: Languages */}
+      <h2 className="text-2xl text-center mb-4">Languages & Databases</h2>
+      <div className="flex flex-wrap items-center justify-center gap-4 mb-8">
         {languages.map(({ Icon, color, duration }, index) => (
           <TechnologyCard
             Icon={Icon}
@@ -88,8 +92,11 @@ const Technologies = () => {
             key={`language-${index}`}
           />
         ))}
+      </div>
 
-        {/* Render Tools and Platforms */}
+      {/* Section: Tools & Platforms */}
+      <h2 className="text-2xl text-center mb-4">Tools & Platforms</h2>
+      <div className="flex flex-wrap items-center justify-center gap-4 mb-8">
         {tools.map(({ Icon, color, duration }, index) => (
           <TechnologyCard
             Icon={Icon}
@@ -98,8 +105,11 @@ const Technologies = () => {
             key={`tool-${index}`}
           />
         ))}
+      </div>
 
-        {/* Render Operating Systems */}
+      {/* Section: Operating Systems */}
+      <h2 className="text-2xl text-center mb-4">Operating Systems</h2>
+      <div className="flex flex-wrap items-center justify-center gap-4">
         {operatingSystems.map(({ Icon, color, duration }, index) => (
           <TechnologyCard
             Icon={Icon}
