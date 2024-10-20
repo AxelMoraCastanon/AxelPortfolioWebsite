@@ -5,7 +5,8 @@ import { motion } from 'framer-motion';
 
 // Helper: Get formatted image title
 const getFormattedTitle = (imagePath) => {
-  const fileName = imagePath.split('/').pop().split('.')[0];
+  let fileName = imagePath.split('/').pop().split('.')[0];
+  fileName = fileName.split('-')[0];  // Remove hash part after dash
   const cleanName = fileName.replace(/([a-z])([A-Z])/g, '$1 $2')
                             .replace(/_/g, ' ')
                             .replace(/screen|Screen/gi, '');
@@ -32,17 +33,15 @@ const itemVariants = {
 const Projects = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState({});
 
-  // Initialize the image index for each project if it doesn't exist
   const initializeImageIndex = (projectTitle) => {
     if (currentImageIndex[projectTitle] === undefined) {
       setCurrentImageIndex(prevState => ({
         ...prevState,
-        [projectTitle]: 0, // Start with the first image
+        [projectTitle]: 0,
       }));
     }
   };
 
-  // Handle "Next" image
   const handleNextImage = (projectTitle) => {
     setCurrentImageIndex(prevState => {
       const currentIndex = prevState[projectTitle] ?? 0;
@@ -51,7 +50,6 @@ const Projects = () => {
     });
   };
 
-  // Handle "Prev" image
   const handlePrevImage = (projectTitle) => {
     setCurrentImageIndex(prevState => {
       const currentIndex = prevState[projectTitle] ?? 0;
@@ -60,7 +58,6 @@ const Projects = () => {
     });
   };
 
-  // Swipe handlers
   const handlers = (projectTitle) => {
     initializeImageIndex(projectTitle);
     return useSwipeable({
