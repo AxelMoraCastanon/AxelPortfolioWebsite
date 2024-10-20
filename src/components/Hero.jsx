@@ -1,6 +1,6 @@
 import { HERO_CONTENT } from "../constants";
 import profilePicture from "../assets/AxelMoraProfilePicture.png";
-import AxelMoraResume from "../../public/AxelMoraResume.pdf"; // Import PDF
+import AxelMoraResume from "../assets/AxelMoraResume.pdf"; // Updated import
 import { motion } from "framer-motion";
 
 const container = (delay) => ({

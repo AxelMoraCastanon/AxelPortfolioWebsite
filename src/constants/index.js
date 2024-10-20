@@ -1,9 +1,40 @@
-import Bidme1 from "../assets/projects/Bidme1.jpg";
-import Bidme2 from "../assets/projects/Bidme2.jpg";
-import BondPortfolio from "../assets/projects/BondPortfolio.jpg";
-import GymPulse from "../assets/projects/GymPulse.jpg";
+// Bond Portfolio screens images
+import BondPortfolio from "../assets/projects/BondPortfolioScreens/BondPortfolio.jpg";
+import BondList from "../assets/projects/BondPortfolioScreens/BondList.png";
+import BondListDetails from "../assets/projects/BondPortfolioScreens/BondListDetails.png";
+import IndustryList from "../assets/projects/BondPortfolioScreens/IndustryList.png";
+import BondsByIndustry from "../assets/projects/BondPortfolioScreens/BondsByIndustry.png";
+import StratificationReportsList from "../assets/projects/BondPortfolioScreens/StratificationReportsList.png";
+import CouponStratification from "../assets/projects/BondPortfolioScreens/CouponStratification.png";
+import YieldStratification from "../assets/projects/BondPortfolioScreens/YieldStratification.png";
+import DatabaseTables from "../assets/projects/BondPortfolioScreens/DatabaseTables.png";
+import BondsTable from "../assets/projects/BondPortfolioScreens/BondsTable.png";
+import StratifyCouponsTable from "../assets/projects/BondPortfolioScreens/StratifyCouponsTable.png";
+import StratifyIndustryTable from "../assets/projects/BondPortfolioScreens/StratifyIndustryTable.png";
+import StratifyRatingGroupTable from "../assets/projects/BondPortfolioScreens/StratifyRatingGroupTable.png";
+import StratifyRatingsTable from "../assets/projects/BondPortfolioScreens/StratifyRatingsTable.png";
+import StratifyTermTable from "../assets/projects/BondPortfolioScreens/StratifyTermTable.png";
+import StratifyYieldTable from "../assets/projects/BondPortfolioScreens/StratifyYieldTable.png";
+
+// GymPulse screens images
+import InteractiveCalendar from "../assets/projects/GymPulseScreens/InteractiveCalendar.jpeg";
+import AppleMapsScreen from "../assets/projects/GymPulseScreens/AppleMapsScreen.jpeg";
+import ContactScreen from "../assets/projects/GymPulseScreens/ContactScreen.jpeg";
+import LocationBasedSearch from "../assets/projects/GymPulseScreens/LocationBasedSearch.jpeg";
+import LocationInfoScreen from "../assets/projects/GymPulseScreens/LocationInfoScreen.jpeg";
+import TrainerinformationScreen from "../assets/projects/GymPulseScreens/TrainerinformationScreen.jpeg";
+import PaymentsStripe from "../assets/projects/GymPulseScreens/PaymentsStripe.jpeg";
+import StripeCamera from "../assets/projects/GymPulseScreens/StripeCamera.jpeg";
+
+// BidMe screens images
+import BidMeDashboard from "../assets/projects/BidMeScreens/BidMeDashboard.jpg";
+import BidMeLocationSearch from "../assets/projects/BidMeScreens/BidMeLocationSearch.jpg";
+import BidMeCreateBid from "../assets/projects/BidMeScreens/BidMeCreateBid.jpg";
+import BidMeInvoice from "../assets/projects/BidMeScreens/BidMeInvoice.jpg";
+
+//AI Club Image and Resume
 import AIClubImage from "../assets/CSUCIArtificialIntelligenceClub.jpg";
-import AxelMoraResume from "../../public/AxelMoraResume.pdf";
+import AxelMoraResume from "../assets/AxelMoraResume.pdf"; // Updated import
 
 export const HERO_CONTENT = `I’m an AWS-certified Software Engineer with a B.S. in Computer Science from CSU Channel Islands.
  I specialize in integrating cloud services to build secure, scalable, and reliable solutions.
@@ -35,7 +66,8 @@ export const PROJECTS = [
     title: "Bond Portfolio App",
     date: "June 2024 - Pesent",
     position:"Software Engineer",
-    image: BondPortfolio,
+    image: [BondPortfolio,BondList,BondListDetails,IndustryList,BondsByIndustry,StratificationReportsList,CouponStratification,YieldStratification,
+          DatabaseTables,BondsTable,StratifyCouponsTable,StratifyIndustryTable,StratifyRatingGroupTable,StratifyRatingsTable,StratifyTermTable,StratifyYieldTable],
     description:
       `Designed and developed a bond portfolio management Android app using Java, Kotlin, and XML, 
       providing users with the ability to perform CRUD operations and generate reports such as coupon stratifications and portfolio summaries. 
@@ -50,7 +82,7 @@ export const PROJECTS = [
     title: "GymPulse App",
     date: "August 2023 - December 2023",
     position:"Software Engineer",
-    image: GymPulse,
+    image: [InteractiveCalendar,AppleMapsScreen,ContactScreen,LocationBasedSearch,LocationInfoScreen,TrainerinformationScreen,PaymentsStripe,StripeCamera],
     description:
       `Enhanced backend data handling on AWS RDS MySQL, 
       improving data retrieval times by 30% and significantly boosting the app's responsiveness and overall user experience. 
@@ -65,7 +97,7 @@ export const PROJECTS = [
     title: "BidMe App",
     date: "August 2022 - December 2022",
     position:"Software Engineer",
-    image: Bidme1,
+    image: [BidMeDashboard,BidMeLocationSearch,BidMeCreateBid,BidMeInvoice],
     description:
       `Leveraged Unix shell scripting to automate data backup and restore processes for the Amazon RDS MySQL database,
       ensuring data integrity while minimizing downtime during maintenance windows. 
