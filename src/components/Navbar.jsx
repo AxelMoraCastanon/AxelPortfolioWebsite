@@ -3,6 +3,7 @@ import logo from '../assets/AxelMoraLogo.png';
 import { FaLinkedin, FaGithub, FaInstagram } from 'react-icons/fa';
 import { MdEmail, MdQrCode } from 'react-icons/md'; // Import Icons
 import { CONTACT } from '../constants'; // Import CONTACT
+import { GiWeightLiftingUp } from "react-icons/gi"; // Import GiWeightLiftingUp icon
 import { QRCodeCanvas } from 'qrcode.react'; // Import QR Code Library
 import {motion} from "framer-motion";
 
@@ -44,6 +45,17 @@ const Navbar = () => {
 
         {/* Icons Section */}
         <div className="flex items-center gap-6 text-2xl ml-auto">
+          {/* Fitness Website Icon */}
+          <motion.a
+            href={CONTACT.fitness}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-yellow-500"
+            whileHover={iconHover}
+          >
+            <GiWeightLiftingUp />
+          </motion.a>
+
           {/* Email Icon */}
           <motion.a
             href={`mailto:${CONTACT.email}`}

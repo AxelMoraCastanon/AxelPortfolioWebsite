@@ -112,6 +112,28 @@ const Contact = () => {
           </motion.div>
         )}
 
+        {/* Axel's Fitness Website Section */}
+        {CONTACT.fitness && (
+          <motion.div className="flex flex-col items-center" variants={itemVariants}>
+            <span className="font-semibold text-blue-300">Axel's Fitness Website: </span>
+            <motion.a
+              href={CONTACT.fitness}
+              className="border-b relative overflow-hidden"
+              target="_blank"
+              rel="noopener noreferrer"
+              variants={hoverEffect}
+              whileHover="hover"
+            >
+              {CONTACT.fitness}
+              <motion.div
+                className="absolute bottom-0 left-0 h-0.5 bg-blue-300"
+                initial={{ width: 0 }}
+                animate={underlineEffect}
+              />
+            </motion.a>
+          </motion.div>
+        )}
+
         {/* Resume Section */}
         <motion.div className="flex flex-col items-center" variants={itemVariants}>
           <span className="font-semibold text-blue-300">Axel Mora's Resume: </span>

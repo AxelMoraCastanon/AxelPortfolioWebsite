@@ -126,5 +126,6 @@ export const PROJECTS = [
 export const CONTACT = {
   email: "axelmora2011@gmail.com",
   linkedin: "https://www.linkedin.com/in/axel-mora-36508316a/",
-  github: "https://github.com/AxelMoraCastanon"
+  github: "https://github.com/AxelMoraCastanon",
+  fitness: "https://axelmoracastanon.github.io/AxelMoraFitnessWebsite/",
 };
